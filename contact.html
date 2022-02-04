@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="
+    background: lightgray; 
+">
+    <nav>
+        <div class="left-side">
+            <a href="index.html">
+                <img src="Assets/logo.png"></a>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>      
+                <li>
+                    <a href="https://github.com/" target="blank">Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right-side">
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </nav>
+
+        <center>
+            <div class="data-input">
+                <h1>GET IN TOUCH</h1>
+                <form action="" enctype="multipart/form-data">
+                    <div class="form-input">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="input-name" placeholder="Insert your name" id="name"/>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="input-email" placeholder="@mail.com" id="email"/>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="input-phone"  id="phone"/>
+                        </div>
+                        <div>
+                            <label for="subject" >Subject</label>
+                            <select type="text" id="input-subject"/>
+                                <option value="" disabled selected>-- SELECT --</option>
+                                <option value="Let's Talk">Let's Talk</option>
+                                <option value="Let's  Colaboration">Let's  Colaboration</option>
+                                <option value="I am Hiring">I am Hiring</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="address">Your Message</label>
+                            <textarea name="message" id="input-message"></textarea>
+                        </div>
+                        <div style="text-align: right;">
+                            <button type="button" onclick="showdata()" >Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </center>
+
+    <script src="form.js"></script>
+
+</body>
+
+</html>
