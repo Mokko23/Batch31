@@ -32,23 +32,35 @@
         <div class="detail-project-data">
             <h1>Dumbways Web App</h1>
             <div class="detail-project-content">
-                <div>
+                <div class="detail-project-content-image">
                     <img src="Assets/blog-img-detail.png">
                 </div>
                 <div class="project-detail-time">
                     <div class="duration">
-                        <i class="fas fa-calendar-alt"></i><label for="Duration">11 Jan 2021 - 11 Feb 2021</label>
-                        <i class="far fa-clock"></i><label for="">1 Month</label>
+                        <div>
+                            <i class="fas fa-calendar-alt"></i><label for="Duration">11 Jan 2022 - 11 April 2022</label>
+                        </div>
+                        <div>
+                            <i class="far fa-clock"></i><label id="tampil" for=""></label>
+                        </div>
                     </div>
                     <div class="detail-technologies">
                         <label for="">Technologies</label>
-                        <div>
-                            <i class="fab fa-node"></i><label for="">Node Js</label>
-                            <i class="fab fa-react"></i><label for="">React Js</label>
+                        <div class="technologies1">
+                            <div>
+                                <i class="fab fa-node"></i><label for="">Node Js</label>
+                            </div>
+                            <div>
+                                <i class="fab fa-react"></i><label for="">React Js</label>
+                            </div>
                         </div>
-                        <div>
-                            <i class="fab fa-angular"></i><label for="">Angular</label>
-                            <i class="fab fa-java"></i><label for="">Java</label>
+                        <div class="technologies1">
+                            <div>
+                                <i  style="margin-right: 40px;" class="fab fa-angular"></i><label for="">Angular</label>
+                            </div>
+                            <div>
+                                <i class="fab fa-java"></i><label for="">Java</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,5 +68,13 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam blanditiis tenetur unde explicabo! Cumque, quas fugit! Veniam, dolorum non aliquid molestiae optio possimus nam eaque est commodi animi nemo pariatur consequatur aspernatur architecto expedita minus. Incidunt et, dolorem suscipit sed officia voluptates molestias sequi ducimus atque laborum aliquam obcaecati deleniti saepe, excepturi accusamus sit maiores. Fugit commodi omnis praesentium iure repudiandae, animi reprehenderit accusantium tenetur quos explicabo tempore et earum aspernatur quidem soluta, nam numquam. Cumque expedita doloribus velit, sunt, et delectus reiciendis earum recusandae commodi nostrum amet facilis inventore laboriosam repellat! Quos nisi non, possimus magnam voluptates at voluptatem.</p>
         </div>
     </div>
+    <script>
+        let dateStart = new Date('2022-01-01');
+        let dateEnd = new Date('2022-04-01');
+
+        const total_months = (dateEnd.getFullYear() - dateStart.getFullYear())*12 + (dateEnd.getMonth() - dateStart.getMonth())
+
+        document.getElementById('tampil').innerHTML = `Durasi : ${total_months} Bulan`;
+    </script>
 </body>
 </html>

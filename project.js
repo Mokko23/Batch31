@@ -64,7 +64,7 @@ function renderProject(){
 
     let projectContainer = document.getElementById('contents-project-data')
 
-    projectContainer.innerHTML = firstProjectgContent()
+    projectContainer.innerHTML = firstProjectContent()
     let i = 0
     for (i;i < lenghtData; i++){
        projectContainer.innerHTML += `
@@ -72,34 +72,36 @@ function renderProject(){
             <div class="project-image">
               <img src="${projects[i].image}" alt="" />
             </div>
-            <h1>
-                <a href="project-detail.html"
-                >${projects[i].nameProject}</a
-                >
-            </h1>
-            <div style="text-align: right;">
-                <span style="font-size: 15px; color: grey;">Durasi : 3 bulan</span>
-            </div>
-            <p>
-                ${projects[i].description}
-            </p>
-            <div class="icon-checkbox">
+            <div class="project-content">
+                <h1>
+                    <a href="project-detail.html"
+                    >${projects[i].nameProject}</a
+                    >
+                </h1>
+                <div style="text-align: left;">
+                    <span id="tampil" style="font-size: 15px; color: grey;">Durasi : ${durationMonth(projects[i].startDate, projects[i].endDate)} Bulan</span>
+                </div>
                 <p>
-                    <i class="${projects[i].nodejs}"></i>
-                    <i class="${projects[i].reactjs}"></i>
-                    <i class="${projects[i].angular}"></i>
-                    <i class="${projects[i].java}"></i>
+                    ${projects[i].description}
                 </p>
-            </div>
-            <div class="btn-group">
-                <button class="btn-edit">Edit</button>
-                <button class="btn-delete">Delete</button>
+                <div class="icon-checkbox">
+                    <p>
+                        <i class="${projects[i].nodejs}"></i>
+                        <i class="${projects[i].reactjs}"></i>
+                        <i class="${projects[i].angular}"></i>
+                        <i class="${projects[i].java}"></i>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-delete">Delete</button>
+                </div>
             </div>
           </div>`
     }
 }
 
-function firstProjectgContent(){
+function firstProjectContent(){
     return `
     <div class="project-list-item">
       <div class="project-image">
@@ -111,8 +113,8 @@ function firstProjectgContent(){
               >Dumbways Mobile App - 2022</a
               >
           </h1>
-          <div style="text-align: right;">
-              <span style="font-size: 15px; color: grey;">Durasi : 3 bulan</span>
+          <div id="tampil" style="text-align: left;">
+              <span style="font-size: 15px; color: grey;">Durasi : 3 Bulan</span>
           </div>
           <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, provident!
@@ -134,18 +136,11 @@ function firstProjectgContent(){
 </div>`
 }
 
-function durationProject(){
-    const start_date = new Date(projects.startDate)
-    const end_date = new Date(projects.endDate)
-
-    const total_months = (end_date.getFullYear() - start_date.getFullYear())*12 + (end_date.getMonth() - start_date.getMonth())
-}
-
-let dateStart = new Date('2014-04-03');
-let dateEnd = new Date('2014-08-03');
-document.getElementById('startdate').innerHTML = dateStart.toDateString()
-document.getElementById('enddate').innerHTML = dateEnd.toDateString()
-
-const total_months = (dateEnd.getFullYear() - dateStart.getFullYear())*12 + (dateEnd.getMonth() - dateStart.getMonth())
-
-document.getElementById('tampil').innerHTML = `Durasi : ${total_months} Bulan`;
+function durationMonth(start,end){
+    dateStart = new Date(start)
+    dateEnd = new Date(end)
+  
+    const total_months = (dateEnd.getFullYear() - dateStart.getFullYear())*12 + (dateEnd.getMonth() - dateStart.getMonth())
+  
+    return total_months
+}  
