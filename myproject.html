@@ -3,6 +3,7 @@
 <head>
     <title>My Project</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     <nav>
@@ -27,62 +28,116 @@
         </div>
     </nav>
 
-    <div class="myProject">
-        <form action="">
-            <div class="data-input">
-                <h1>Add My Project</h1>
-                <div>
-                    <label for="projectname">Project Name</label>
-                    <input type="text" id="projectname">
-                </div>
-
-                <div>
-                    <div>
-                        <label for="startdate">Start Date</label>
-                        <input type="date" id="startdate">
-                    </div>
-                    <div>
-                        <label for="enddate">End Date</label>
-                        <input type="date" id="enddate">
-                    </div>
-                </div>
-
-                <div>
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                </div>
-
-                <div class="checkbox">
-                    <label for="technologies">Technologies</label>
-                    <div>
-                        <div>
-                            <input type="checkbox">
-                            <label for="nodejs">Node js</label>
-                        </div>
-                        <div>
-                            <input type="checkbox">
-                            <label for="reactjs">React js</label>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <input type="checkbox">
-                            <label for="nextjs">Next js</label>
-                        </div>
-                        <div>
-                            <input type="checkbox">
-                            <label for="typescript">TypeScript</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <label for="upload">Upload Image</label>
-                    <input type="text">
-                </div>
-            </div>
-        </form>
-    </div>
+    <!-- Form -->
+    <div class="project">
+        <div class="myProject">
+            <div class="project-container">
+                <form onsubmit= "addProject(event)">
+                        <h1>Add My Project</h1>
     
+                        <div>
+                            <label for="projectname" id="nameproject">Project Name</label>
+                            <input type="text" id="projectname">
+                        </div>
+        
+                        <div class="input-date">
+                            <div style="margin-right: 20px;">
+                                <label for="startdate">Start Date</label>
+                                <input type="date" id="startdate" >
+                            </div>
+                            <div>
+                                <label for="enddate">End Date</label>
+                                <input type="date" id="enddate">
+                            </div>
+                        </div>
+        
+                        <div>
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                        </div>
+        
+                        <div>
+                            <h3 for="technologies" class="technologies">Technologies</h3>
+                            <div class="checkbox">
+                                <div>
+                                    <div>
+                                        <input type="checkbox" value="fab fa-node" id="nodejs">
+                                        <label for="nodejs">Node js</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" value="fab fa-react" id="reactjs">
+                                        <label for="reactjs">React js</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input type="checkbox" value="fab fa-angular" id="angular">
+                                        <label for="angular">Angular</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" value="fab fa-java" id="java">
+                                        <label for="java">Java</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div>
+                            <label>Upload Image</label>
+                            <div class="input-project-image-group">
+                                <label for="uploadimg">
+                                    <p>Choose</p>
+                                    <img src="assets/file.png" alt="file" />
+                                </label>
+                            </div>
+                            <input type="file"  id="uploadimg" hidden>
+                        </div>
+        
+                        <div class="button-group">
+                            <button>Submit</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- <hr class="line" /> -->
+        <div id="contents-project" class="project-list">
+          <!-- dynamic content would be here -->
+          <h1>MY PROJECT</h1>
+          <div class="project-list-data" id="contents-project-data">
+              <div class="project-list-item">
+                <div class="project-image">
+                  <img src="Assets/blog-img.png" alt="" />
+                </div>
+                <div class="project-content">
+                    <h1>
+                        <a href="project-detail.html"
+                        >Dumbways Mobile App - 2022</a
+                        >
+                    </h1>
+                    <div style="text-align: left;">
+                        <span id="tampil" style="font-size: 15px; color: grey;">Durasi : </span>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, provident!
+                    </p>
+                    <div class="icon-checkbox">
+                        <p>
+                            <i class="fab fa-node"></i>
+                            <i class="fab fa-react"></i>
+                            <i class="fab fa-angular"></i>
+                            <i class="fab fa-java"></i>
+                        </p>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <script src="project.js"></script>
 </body>
+
 </html>
